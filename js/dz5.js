@@ -14,26 +14,29 @@ for (i = 0; i < ARRAY_LENGTH; i++) {
 
 console.table(arr);
 
+function SayHi() {
+	var arrtop = [];
+	var arrright = [];
+	var arrbottom = [];
+	var arrleft = [];
 
-var arrtop = [];
-var arrright = [];
-var arrbottom = [];
-var arrleft = [];
-
-arrtop = arr[0].slice();
-arrtop.pop();
-arrbottom = arr[ARRAY_LENGTH - 1].slice();
-arrbottom.reverse();
-arrbottom.pop();
+	arrtop = arr[0].slice();
+	arrtop.pop();
+	arrbottom = arr[ARRAY_LENGTH - 1].slice();
+	arrbottom.reverse();
+	arrbottom.pop();
 
 
-for (i = 0; i < ARRAY_LENGTH - 1; i++) {
-	arrright[i] = arr[i][ARRAY_LENGTH - 1];
-	arrleft[i] = arr[ARRAY_LENGTH - 1 - i][0];
+	for (i = 0; i < ARRAY_LENGTH - 1; i++) {
+		arrright[i] = arr[i][ARRAY_LENGTH - 1];
+		arrleft[i] = arr[ARRAY_LENGTH - 1 - i][0];
+	}
+	var arrdone = arrtop.concat(arrright, arrbottom, arrleft);
+	console.log(arrtop);
+	console.log(arrright);
+	console.log(arrbottom);
+	console.log(arrleft);
+	console.log(arrdone);
 }
-var arrdone = arrtop.concat(arrright, arrbottom, arrleft);
-console.log(arrtop);
-console.log(arrright);
-console.log(arrbottom);
-console.log(arrleft);
-console.log(arrdone);
+
+SayHi();
